@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   href: string;
+  newTab?: boolean;
 }
 
-const { href, title } = Astro.props;
+const { href, title, newTab } = Astro.props;
 ---
 
 <li class="link-card">
-  <a href={href}>
+  <a href={href} target={newTab ? '_blank' : '_self'}>
     <h2>
       {title}
     </h2>

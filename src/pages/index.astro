@@ -12,12 +12,13 @@ import Card from '../components/Card.astro';
         <Card href="/about" title="About" />
         <Card href="/experience" title="Experience" />
         <Card href="/education" title="Education" />
-        <Card href={import.meta.env.RESUME_LINK} title="Resume" />
+        <Card href={import.meta.env.RESUME_LINK} title="Resume" newTab={true} />
         <Card
           href="https://www.linkedin.com/in/collinbetori/"
           title="LinkedIn"
+          newTab={true}
         />
-        <Card href="https://github.com/cbetori" title="GitHub" />
+        <Card href="https://github.com/cbetori" title="GitHub" newTab={true} />
       </ul>
     </div>
   </main>
