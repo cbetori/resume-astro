@@ -2,12 +2,12 @@
 interface Props {
   company: string;
   dateRange: string;
-  technologies: string[];
+  stack: string[];
   description: string[];
   title: string;
 }
 
-const { title, company, dateRange, technologies, description } = Astro.props;
+const { title, company, dateRange, stack, description } = Astro.props;
 ---
 
 <div class="wrapper">
@@ -23,7 +23,7 @@ const { title, company, dateRange, technologies, description } = Astro.props;
   </ul>
   <h3>Stack</h3>
   <ul>
-    {technologies.map((t) => <li>{t}</li>)}
+    {stack.map((t) => <li>{t}</li>)}
   </ul>
 </div>
 <style>
