@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div>
+      <h2>Austin Coding Academy</h2>
+      <p>Full Stack Web Development</p>
+    </div>
+    <div>
+      <h2>St. Edward’s University</h2>
+      <p>Bachelor of Business Administration in Accounting</p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: white;
+    line-height: 1.6;
+    gap: 2rem;
+  }
+  h2 {
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 3rem);
+  }
+  p {
+    font-size: clamp(0.8rem, 2.3vw, 2.7rem);
+    margin: 0;
+  }
+  .title {
+    display: flex;
+    text-align: center;
+    align-content: center;
+  }
+</style>

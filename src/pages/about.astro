@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import profilePic from '../assets/profile_pic.jpg';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div>
+      <Image class="pic" src={profilePic} alt="Profile Picture" />
+      <p>
+        Self-driven young professional with a demonstrated history of continued
+        education, problem-solving, attention to detail, and process
+        improvement. Passionate about technology and highly motivated to
+        continuously learn and self-improve, showcased by continued education
+        with Austin Coding Academy (ACA) with a focus in full-stack web
+        development in addition to a bachelor’s degree from St. Edward's
+        University in Austin, TX.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    justify-content: center;
+    color: white;
+    line-height: 1.6;
+  }
+  .pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    max-width: 15rem;
+    max-height: 15rem;
+    width: calc(100vw - 15rem);
+    height: calc(100vw - 15rem);
+  }
+  p {
+    font-size: clamp(0.8rem, 2.5vw, 3rem);
+    max-width: 2000px;
+    text-align: center;
+  }
+</style>

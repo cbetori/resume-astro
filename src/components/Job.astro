@@ -1,0 +1,41 @@
+---
+interface Props {
+  company: string;
+  dateRange: string;
+  technologies: string[];
+  description: string[];
+  title: string;
+}
+
+const { title, company, dateRange, technologies, description } = Astro.props;
+---
+
+<div class="wrapper">
+  <h2>
+    {title}
+  </h2>
+  <div>{dateRange}</div>
+  <div>{company}</div>
+
+  <h3>Job Details</h3>
+  <ul>
+    {description.map((t) => <li>{t}</li>)}
+  </ul>
+  <h3>Stack</h3>
+  <ul>
+    {technologies.map((t) => <li>{t}</li>)}
+  </ul>
+</div>
+<style>
+  .wrapper {
+  }
+  h2 {
+    font-size: clamp(1rem, 2.5vw, 3rem);
+  }
+  h3 {
+    font-size: clamp(0.8rem, 2.3vw, 2.7rem);
+  }
+  li {
+    font-size: clamp(0.6rem, 1.5vw, 2.7rem);
+  }
+</style>
