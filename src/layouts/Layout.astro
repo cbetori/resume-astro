@@ -1,6 +1,12 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Card from '../components/Card.astro';
+import { getImage } from 'astro:assets';
+import profilePic from '../assets/profile_pic.jpg';
+const { src } = await getImage({
+  src: profilePic,
+});
+
 interface Props {
 	title: string;
 }
@@ -13,10 +19,11 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="resume" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/cb.png" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preload" as="image" href={src}/>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
@@ -27,9 +34,12 @@ const { title } = Astro.props;
 		}
 	</h1>
 		<div class="wrapper">
-		<slot />
+		<slot/>
 	</div>
 	</body>
+	<head>
+	
+	</head>
 </html>
 <style is:global>
 	:root {
