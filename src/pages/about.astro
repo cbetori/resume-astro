@@ -7,7 +7,12 @@ import profilePic from '../assets/profile_pic.jpg';
 <Layout title="Welcome to Astro.">
   <main>
     <div>
-      <Image class="pic" src={profilePic} alt="Profile Picture" />
+      <Image 
+        class="pic" 
+        src={profilePic} 
+        alt="Profile Picture"
+        loading="eager"
+      />
       <p>
         Self-driven young professional with a demonstrated history of continued
         education, problem-solving, attention to detail, and process
