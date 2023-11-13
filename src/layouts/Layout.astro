@@ -2,7 +2,6 @@
 import { ViewTransitions } from 'astro:transitions';
 import Card from '../components/Card.astro';
 import { getImage } from 'astro:assets';
-import stylesUrl from '../fonts/retro.woff2';
 import profilePic from '../assets/profile_pic.jpg';
 const { src } = await getImage({
   src: profilePic,
@@ -23,9 +22,8 @@ const { title } = Astro.props;
 		<meta name="description" content="resume" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/cb.png" />
-		<link rel="preload" href={stylesUrl} as="font" type="font/woff2" crossorigin>
 		<meta name="generator" content={Astro.generator} />
-		<link rel="prefetch" as="image" href={src}/>
+		<link rel="preload" as="image" href={src}/>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
@@ -54,7 +52,6 @@ const { title } = Astro.props;
 	}
 	@font-face {
 		font-family: 'Retro';
-		font-display: swap;
 		src: url('../fonts/retro.woff2') format('woff2');		
 	}
 	html {
